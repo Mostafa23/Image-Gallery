@@ -59,6 +59,8 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 function handleSwipe() {
+    clearInterval(slideInterval);
+    
     if (touchEndX < touchStartX - 10) nextSlide(); 
     if (touchEndX > touchStartX + 10) prevSlide(); 
 }
