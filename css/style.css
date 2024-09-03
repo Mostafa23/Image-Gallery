@@ -52,6 +52,10 @@
     -webkit-user-select: none;
 }
 
+.slider_slides_btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 .slider_slides_prev {
     left: 10px;
 }
