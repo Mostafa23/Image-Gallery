@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
-
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    
-    <div class="slider">
-        <div class="slides">
-            <img src="images/8116 1 (1).png" alt="Image 1">
-            <img src="images/8116 1.png" alt="Image 2">
-            <img src="images/solar-panels-meadow 1.png" alt="Image 3">
-            <img src="images/solar-panels-meadow 2.png" alt="Image 3">
-        </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
-        <div class="pagination" id="dots">
-            <!-- //////////// -->
+    <div class="contauiner">
+        <div class="slider_" id="slider">
+            <div class="slider_slides_" id="slides">
+                <div class="slider_slides_img" style="background-image: url('images/8116 1 (1).png');"></div>
+                <div class="slider_slides_img" style="background-image: url('images/8116 1.png');"></div>
+                <div class="slider_slides_img" style="background-image: url('images/solar-panels-meadow 1.png');"></div>
+                <div class="slider_slides_img" style="background-image: url('images/solar-panels-meadow 2.png');"></div>
+            </div>
+            <button class="slider_slides_prev slider_slides_btn" onclick="prevSlide()">&#10094;</button>
+            <button class="slider_slides_next slider_slides_btn" onclick="nextSlide()">&#10095;</button>
+            <div class="slider_slides_pagination_" id="dots">
+                <!-- ///// js ///// -->
+            </div>
         </div>
     </div>
-
     
     <script src="js/script.js"></script>
 </body>
