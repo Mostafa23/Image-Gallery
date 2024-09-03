@@ -83,6 +83,10 @@
     cursor: pointer;
 }
 
+.slider_slides_pagination_dot:hover {
+    transform: scale(1.5);
+}
+
 .slider_slides_pagination_dot.active {
     background-color: #717171;
 }
