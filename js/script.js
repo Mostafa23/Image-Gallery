@@ -1,12 +1,13 @@
 let currentIndex = 0;
-const slides = document.querySelector('.slides');
-const totalSlidesimg = document.querySelectorAll('.slides img');
-const totalSlides = slides.children.length;
+const slider = document.getElementById('slider');
+const slides = document.getElementById('slides');
+const totalSlidesimg = document.querySelectorAll('.slider_slides_img');
+const totalSlides = totalSlidesimg.length;
 const doots = document.getElementById("dots");
 
 (function totalDots() {
     doots.innerHTML = Array.from(totalSlidesimg).map((_, index) => `
-        <span class="dot" onclick="currentSlide(${index})"></span>
+        <span class="slider_slides_pagination_dot" onclick="currentSlide(${index})"></span>
     `).join("");
     updateDots();
 })();
@@ -28,7 +29,7 @@ function currentSlide(index) {
 }
 
 function updateDots() {
-    const dots = document.querySelectorAll('.dot'); 
+    const dots = document.querySelectorAll('.slider_slides_pagination_dot');
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentIndex);
     });
@@ -44,21 +45,22 @@ function prevSlide() {
 
 let slideInterval = setInterval(nextSlide, 4000);
 
-document.querySelector('.slider').addEventListener('mouseover', () => {
+slider.addEventListener('mouseover', () => {
     clearInterval(slideInterval);
 });
 
-document.querySelector('.slider').addEventListener('mouseout', () => {
+slider.addEventListener('mouseout', () => {
     slideInterval = setInterval(nextSlide, 4000);
 });
 
-// Swipe functionality
+
+//touch
 let touchStartX = 0;
 let touchEndX = 0;
 
 function handleSwipe() {
-    if (touchEndX < touchStartX) nextSlide();
-    if (touchEndX > touchStartX) prevSlide();
+    if (touchEndX < touchStartX - 10) nextSlide(); 
+    if (touchEndX > touchStartX + 10) prevSlide(); 
 }
 
 slides.addEventListener('touchstart', (e) => {
